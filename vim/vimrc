@@ -1,0 +1,12 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+set number
+set mouse=a
+set clipboard=unnamed
+
+let g:javascript_plugin_jsdoc = 1
+
+source ~/projects/dotfiles/vim/buffers.vim
+source ~/projects/dotfiles/vim/syntastic.vim
+source ~/projects/dotfiles/vim/nerdtree.vim
