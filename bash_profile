@@ -6,6 +6,8 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.i
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
 
 export GOPATH=~/projects/go
+
+# CLICOLOR and LSCOLORS set the color scheme for ls command
 export CLICOLOR=1 
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
