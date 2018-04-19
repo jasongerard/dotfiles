@@ -72,6 +72,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 Plug 'danilo-augusto/vim-afterglow'
+Plug 'tpope/vim-rails'
 call plug#end()
 
 " enable deoplete
@@ -171,15 +172,8 @@ let g:airline_powerline_fonts = 1
 " new 'tab'
 nmap <Leader>t :enew<cr>
 
-" next buffer
-nmap <C-Right> :bnext<CR>
-nmap <Leader>l :bnext<CR>
-nmap <Leader>k :bnext<CR>
-
 " previous buffer
-nmap <C-Left> :bprevious<CR>
-nmap <Leader>h :bprevious<CR>
-nmap <Leader>j :bprevious<CR>
+nmap <C-h> :bprevious<CR>
 
 " close current buffer
 nmap <Leader>q :bp <BAR> bd #<CR>
@@ -241,7 +235,7 @@ noremap <M-p> :echo expand('%:p:h')
 " refresh NERDTree
 " nmap <Leader>r :NERDTreeFocus<CR>R<C-w><C-p>
 
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype erb,eruby,yaml,ruby,html,javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 hi CursorLine cterm=underline gui=underline guibg=black
