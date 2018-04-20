@@ -24,6 +24,7 @@ brew install neovim
 brew install go
 brew install python
 brew install node
+brew install rust
 brew install fzf
 brew install fd
 brew install the_silver_searcher
