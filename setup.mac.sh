@@ -20,6 +20,7 @@ brew install wget
 brew install tree
 brew install tmux
 brew install neovim
+brew install go
 brew install python
 brew install fzf
 brew install fd
