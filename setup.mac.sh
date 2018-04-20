@@ -28,6 +28,11 @@ brew install kubernetes-cli
 brew install doctl
 brew install awscli
 
+pip2 install neovim --upgrade
+pip3 install neovim --upgrade
+
+pip2 install sexpdata websocket-client
+
 brew cask install caskroom/versions/java8
 
 brew install scala
