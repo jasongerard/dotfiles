@@ -46,6 +46,8 @@ function! BuildComposer(info)
 endfunction
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'derekwyatt/vim-scala'
@@ -72,8 +74,9 @@ Plug 'tpope/vim-eunuch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 Plug 'danilo-augusto/vim-afterglow'
-Plug 'tpope/vim-rails'
+Plug 'benmills/vimux'
 call plug#end()
+
 
 " enable deoplete
 call deoplete#enable()
@@ -98,7 +101,7 @@ endif
 " bind F to grep word under cursor
 nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
-nnoremap \ :Ag<SPACE>
+nnoremap \ :Ag<CR>
 
 " bind \ (backward slash) to grep shortcut
 " command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -169,17 +172,30 @@ let g:airline_powerline_fonts = 1
 
 " let g:neomake_verbose = 3
 " let g:neomake_logfile = '/tmp/neomake.log'
+
+
+
+
 " new 'tab'
 nmap <Leader>t :enew<cr>
 
+" next buffer
+nmap <C-Right> :bnext<CR>
+nmap <Leader>l :bnext<CR>
+nmap <Leader>k :bnext<CR>
+
 " previous buffer
-nmap <C-h> :bprevious<CR>
+nmap <C-Left> :bprevious<CR>
+nmap <Leader>h :bprevious<CR>
+nmap <Leader>j :bprevious<CR>
 
 " close current buffer
 nmap <Leader>q :bp <BAR> bd #<CR>
 
 " list buffers
 nmap <Leader>bl :ls<CR>
+
+nmap <Leader>c :windo lcl\|ccl<CR>
 
 noremap <Leader>/ :Commentary<cr>
 " Window Movement
@@ -235,7 +251,7 @@ noremap <M-p> :echo expand('%:p:h')
 " refresh NERDTree
 " nmap <Leader>r :NERDTreeFocus<CR>R<C-w><C-p>
 
-autocmd Filetype erb,eruby,yaml,ruby,html,javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 hi CursorLine cterm=underline gui=underline guibg=black
