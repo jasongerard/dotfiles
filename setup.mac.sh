@@ -31,6 +31,7 @@ brew install the_silver_searcher
 brew install kubernetes-cli
 brew install doctl
 brew install awscli
+brew install reattach-to-user-namespace # needed for copy/paste/pbcopy to work in tmux/iterm
 
 pip2 install neovim --upgrade
 pip3 install neovim --upgrade
