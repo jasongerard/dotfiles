@@ -9,7 +9,9 @@ sudo apt-get install \
     software-properties-common \
     silversearcher-ag \
     python-pip \
-    jq
+    jq \
+    tmux \
+    neovim
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 pip2 install sexpdata websocket-client
@@ -17,9 +19,7 @@ pip2 install sexpdata websocket-client
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable"
 
 sudo apt-get update
 
