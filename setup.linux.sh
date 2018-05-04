@@ -27,9 +27,9 @@ sudo apt-get install docker-ce
 
 sudo usermod -a -G docker $USER
 
-curl -fLo go1.10.linux-amd64.tar.gz https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-sudo tar -C /usr/local -xf go1.10.linuxj-amd64.tar.gz
-rm go1.10.linux-amd64.tar.gz
+curl -fLo go1.10.2.linux-amd64.tar.gz https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xf go1.10.2.linux-amd64.tar.gz
+rm go1.10.2.linux-amd64.tar.gz
 sudo ln -s /usr/local/go/bin/* /usr/local/bin/
 
 curl -fLo node-v8.10.0-linux-x64.tar.xz https://nodejs.org/dist/v8.10.0/node-v8.10.0-linux-x64.tar.xz
