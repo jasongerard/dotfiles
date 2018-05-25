@@ -18,6 +18,12 @@ brew cask install spotify
 brew cask install slack
 brew cask install firefox
 
+# emacs/spacemacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+brew linkapps emacs-plus
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
 brew install bash-completion
 brew install wget
 brew install tree
