@@ -15,6 +15,8 @@ brew cask install rider
 brew cask install alfred
 brew cask install docker
 brew cask install spotify
+brew cask install slack
+brew cask install firefox
 
 brew install bash-completion
 brew install wget
