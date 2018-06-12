@@ -2,21 +2,25 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Init jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 export GOPATH=~/projects/go
+export GOBIN=~/projects/go/bin
+export PATH=$GOPATH/bin:$PATH
 
 # CLICOLOR and LSCOLORS set the color scheme for ls command
 export CLICOLOR=1 
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export PATH=$GOPATH/bin:$PATH
-
+# used to add current get branch to prompt
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+# set up prompt - don't add anything below here
 reset=$(tput sgr0)
 bold=$(tput bold)
 black=$(tput setaf 0)
