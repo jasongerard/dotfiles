@@ -17,6 +17,7 @@ brew cask install docker
 brew cask install spotify
 brew cask install slack
 brew cask install firefox
+brew cask install evernote
 
 # emacs/spacemacs
 brew tap d12frosted/emacs-plus
@@ -45,6 +46,8 @@ pip2 install neovim --upgrade
 pip3 install neovim --upgrade
 
 pip2 install sexpdata websocket-client
+
+brew install jenv
 
 brew cask install caskroom/versions/java8
 
