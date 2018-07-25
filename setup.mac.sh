@@ -19,12 +19,6 @@ brew cask install slack
 brew cask install firefox
 brew cask install evernote
 
-# emacs/spacemacs
-brew tap d12frosted/emacs-plus
-brew install emacs-plus
-brew linkapps emacs-plus
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-
 brew install bash-completion
 brew install wget
 brew install tree
@@ -40,6 +34,7 @@ brew install the_silver_searcher
 brew install kubernetes-cli
 brew install doctl
 brew install awscli
+brew isntall jq
 brew install reattach-to-user-namespace # needed for copy/paste/pbcopy to work in tmux/iterm
 
 pip2 install neovim --upgrade
@@ -47,12 +42,12 @@ pip3 install neovim --upgrade
 
 pip2 install sexpdata websocket-client
 
-brew install jenv
+#brew install jenv
 
-brew cask install caskroom/versions/java8
+#brew cask install caskroom/versions/java8
 
-brew install scala
-brew install sbt
+#brew install scala
+#brew install sbt
 
 # vim-plug install
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
