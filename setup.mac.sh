@@ -18,6 +18,7 @@ brew cask install spotify
 brew cask install slack
 brew cask install firefox
 brew cask install evernote
+brew cask install virtualbox
 
 brew install bash-completion
 brew install wget
