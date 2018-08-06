@@ -12,6 +12,8 @@ brew cask install pycharm
 brew cask install webstorm
 brew cask install datagrip
 brew cask install rider
+brew cask install goland
+brew cask install clion
 brew cask install alfred
 brew cask install docker
 brew cask install spotify
