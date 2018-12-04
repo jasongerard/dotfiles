@@ -20,6 +20,16 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+kube_current_context()
+{
+    # Get current context
+    CONTEXT=$(kubectl config current-context)
+
+    if [ -n "$CONTEXT" ]; then
+        echo " (${CONTEXT})"
+    fi
+}
+
 # set up prompt - don't add anything below here
 reset=$(tput sgr0)
 bold=$(tput bold)
@@ -35,6 +45,6 @@ user_color=$green
 
 [ "$UID" -eq 0 ] && { user_color=$red; }
 
-PS1="\[$reset\][\[$cyan\]\A\[$reset\]]\[$user_color\]\u@\h\
-\[$white\]:\[$cyan\]\w\[$reset\]\[$yellow\]\$(parse_git_branch)\[$reset\][\[$white\]\$?\[$reset\]]\[$white\]\
+PS1="\[$reset\][\[$cyan\]\A\[$reset\]]\[$user_color\]\u\
+\[$white\]:\[$cyan\]\w\[$reset\]\[$white\]\$(kube_current_context)\[$reset\]\[$yellow\]\$(parse_git_branch)\[$reset\][\[$white\]\$?\[$reset\]]\[$white\]\
 \\n\$\[$reset\] "
