@@ -15,22 +15,38 @@ export PATH=$GOPATH/bin:$PATH
 export CLICOLOR=1 
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# used to add current get branch to prompt
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
 kube_current_context()
 {
     # Get current context
     CONTEXT=$(kubectl config current-context)
 
     if [ -n "$CONTEXT" ]; then
-        echo " (${CONTEXT})"
+        echo "${CONTEXT}"
     fi
 }
 
-# set up prompt - don't add anything below here
+kcc()
+{
+    kube_current_context
+}
+
+gcp()
+{
+    parse_active_gcp_config
+}
+
+parse_git_branch() {
+   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+parse_active_gcp_config() {
+    CONFIG=$(cat ~/.config/gcloud/active_config)
+
+    if [ -n "$CONFIG" ]; then
+        echo "${CONFIG}"
+    fi
+}
+
 reset=$(tput sgr0)
 bold=$(tput bold)
 black=$(tput setaf 0)
@@ -46,5 +62,4 @@ user_color=$green
 [ "$UID" -eq 0 ] && { user_color=$red; }
 
 PS1="\[$reset\][\[$cyan\]\A\[$reset\]]\[$user_color\]\u\
-\[$white\]:\[$cyan\]\w\[$reset\]\[$white\]\$(kube_current_context)\[$reset\]\[$yellow\]\$(parse_git_branch)\[$reset\][\[$white\]\$?\[$reset\]]\[$white\]\
-\\n\$\[$reset\] "
+\[$white\]:\[$cyan\]\w\[$reset\]\[$white\] \[$yellow\]\$(parse_git_branch)\[$reset\]\n$ "
